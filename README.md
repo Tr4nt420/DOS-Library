@@ -6,7 +6,6 @@ cd DOS-Library
 npm install
 node thingy.js
 ```
-Delete current folder and unzip staticfolder.zip for more games.
-
+included with 100 preview games, delete `staticfolder` and unzip `staticfolder.zip` for more!
 
 Enjoy!
