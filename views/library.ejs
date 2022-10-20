@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+	<title>DOS Library</title>
+  </head>
+  <body>
+		<script defer>
+			let nav = ""
+			let thing = ""
+		</script>
+		<h1 id="top">Powered by: <a target="_blank" href="https://js-dos.com/">js-dos</a></h1>
+		<h3>Click on one of the links to start playing in your browser!</h3>
+		<nav id ="navb">
+
+		</nav>
+	  <% for (const [key, value] of Object.entries(xDic)) { %>
+	  	<h1 id="<%=key%>"><%= key %></h1>
+		<a id="<%=key%>id" href="#<%=key%>" style="padding-left:1%;"><%=key%></a>
+		<h4><a  href="#top" style="display:block; padding-bottom:1%;">top</a></h4>
+		<script>
+			nav = document.getElementById("navb")
+
+			thing = document.getElementById("<%=key%>id")
+			nav.appendChild(thing)
+		</script>
+		<% for(let i = 0; i<xDic[key]["fileInDic"].length; i++){ %>
+			
+	  		<a href="http://198.74.102.20:2256/<%= value['fileInDic'][i] %>" style="display: block; margin-right:0px;" target="_blank"><%= value['fName'][i] %> </a>
+		<% } %>
+	  <% } %>
+  </body>
+</html>

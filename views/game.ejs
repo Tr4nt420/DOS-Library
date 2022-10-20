@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Game</title>
+		<link rel="stylesheet" href="js-dos/js-dos.css">
+		<script src="js-dos/js-dos.js"></script>
+
+	</head>
+
+	<body style="height=100%; margin:0;">
+		<% if (gameName) { %>
+			<% console.log(gameName) %>
+
+			<% if (fs.existsSync("staticfolder/" + gameName + ".jsdos")) { %>
+				<div id="root" style="min-width:100%;min-height:100%; position: fixed; left:0; top:0;"></div>
+				<script>
+					document.title = "<%= gameName %>"
+					emulators.pathPrefix="js-dos/";
+  					Dos(document.getElementById("root")).run("<%= gameName %>.jsdos");
+				</script>
+			<% } else { %>
+				<h1>Game not found</h1>
+			<% } %>
+		<% } else { %>
+			<h1>Welcome</h1>
+		<% } %>
+	</body>
+</html>
